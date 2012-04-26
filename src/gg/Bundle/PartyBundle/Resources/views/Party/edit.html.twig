@@ -1,0 +1,36 @@
+{% extends "ggPartyBundle::layout.html.twig" %}
+
+{% block body %}
+<div id="container" class="bloc">
+<h1>Party edit</h1>
+
+<form action="{{ path('party_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <div>
+        {{ form_label(edit_form.StartingDate,'Début') }}
+        {{ form_widget(edit_form.StartingDate,{'attr':{'class':'datepicker input-date'}}) }}    
+    </div>
+    <div>
+        {{ form_label(edit_form.EndingDate,'Fin') }}
+        {{ form_widget(edit_form.EndingDate,{'attr':{'class':'datepicker input-date'}}) }}    
+    </div>
+    {{ form_rest(edit_form) }}
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('party') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('party_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+</div>
+{% endblock body %}

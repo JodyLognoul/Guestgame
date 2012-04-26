@@ -1,0 +1,74 @@
+{% extends "ggPartyBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="title-page">
+        <img src="{{ asset('public/images/new-party.png') }}"/>
+        <h2 class="title">Nouvelle partie</h2>
+    </div>                     
+    <form action="{{ path('party_create') }}" method="post" {{ form_enctype(form) }}>
+        <div id="new-party-form"> 
+            <div class="clearfix">
+                {{ form_label(form.gwho,'Qui êtes vous') }}
+                <div class="input">
+                    {{ form_widget(form.gwho) }}    
+                </div>
+            </div>
+            <div class="clearfix">
+                {{ form_label(form.gwhere,'Où se déroule la partie') }}
+                <div class="input">
+                {{ form_widget(form.gwhere, { 'attr': {'class': 'xlarge'}}) }}    
+                </div>
+            </div>
+            <div class="clearfix">
+                {{ form_label(form.gwhen,'Date partie') }}
+                <div class="input">    
+                {{ form_widget(form.gwhen,{'attr':{'class':'datepicker input-date span3'}}) }}    
+                </div>
+            </div>
+            <div class="clearfix">
+                {{ form_label(form.gwhat,'A quel jeu prévoyez vous de jouer') }}
+                <div class="input">
+                    {{ form_widget(form.gwhat) }}    
+                </div>
+            </div>
+            <div class="clearfix">
+                {{ form_label(form.ghow,'Infos complémentaire') }}
+                <div class="input">
+                    {{ form_widget(form.ghow) }}    
+                </div>
+            </div>
+            <div class="clearfix">
+                {{ form_label(form.email,'Votre email') }}
+                <div class="input">
+                    {{ form_widget(form.email) }}    
+                </div>
+            </div>
+        {{ form_rest(form) }}
+        </div>
+        <div style="margin-top: 25px;">    
+            <button class="btn gvalid" type="submit">Create</button>
+            <a class="btn primary" href="{{ path('party') }}">Back to the list</a>
+        </div>
+    </form>    
+{% endblock body %}
+{% block script %}    
+{{ parent() }}
+<script>
+    
+    $(function() {
+        var addresspicker = $( "#addresspicker" ).addresspicker();
+        var addresspickerMap = $( "#gg_bundle_partybundle_partytype_gwhere" ).addresspicker({
+        elements: {
+        map: "#new-party-map",
+        lat: "#gg_bundle_partybundle_partytype_Latitude",
+        lng: "#gg_bundle_partybundle_partytype_Longitude",
+        locality: '#gg_bundle_partybundle_partytype_Locality',
+        country: '#gg_bundle_partybundle_partytype_Country'
+        }
+        });
+        var gmarker = addresspickerMap.addresspicker( "marker");
+        gmarker.setVisible(true);
+        addresspickerMap.addresspicker( "updatePosition");
+    });
+</script>
+{% endblock %}

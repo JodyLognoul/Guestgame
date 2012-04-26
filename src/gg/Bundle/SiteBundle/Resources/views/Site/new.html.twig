@@ -1,0 +1,21 @@
+{% extends "ggSiteBundle::layout.html.twig" %}
+{% block body %}
+<div id="container" class="bloc">
+    <h1>Site creation</h1>
+
+    <form action="{{ path('site_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('site') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

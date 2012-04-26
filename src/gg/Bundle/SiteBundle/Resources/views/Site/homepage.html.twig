@@ -1,0 +1,29 @@
+{% extends "ggSiteBundle::layout.html.twig" %}
+{% block title %}
+    {{ parent() }} - Homepage
+{% endblock %}
+
+{% block body %}
+        <p class="presentation">
+        Bienvenu sur guestgame.com, votre organisateur de parties de jeux de plateau, jeux de
+        rôle et autres.
+        <br /><br />
+        Le but de ce site, est de vous permettre d’organiser une partie de jeu chez vous, ou de
+        rejoindre une partie que quelqu’un de votre région organise (un ami par exemple).
+        <br /><br />
+        Vous êtes ainsi en contact avec d’autres personnes qui partagent votre passion du jeu.
+        <br /><br />
+        Naturellement guestgame.com détecte automatiquement où vous vous trouvez lors de
+        votre passage sur le site, afin de  vous proposer une partie proche de chez vous.
+        <br /><br />
+        Une fois la partie passé, vous pouvez alors donner un note au joueur qui vous a accueilli,
+        ou un petit commentaire pour le remercier. Cela donnera un après goût agréable à la
+        soirée, et de la crédibilité à celui ci, pour ses futurs parties.
+
+        Cool ! Comment participer ?
+        </p>
+{% endblock %}     
+
+{% block script %}    
+      {{ parent() }}    
+{% endblock %}

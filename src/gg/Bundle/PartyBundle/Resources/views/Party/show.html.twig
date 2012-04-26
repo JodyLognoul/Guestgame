@@ -1,0 +1,39 @@
+{% extends "ggPartyBundle::layout.html.twig" %}
+
+
+{% block body %}
+<h4>Détail d'une partie</h4>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Qui</th>
+            <td>{{ entity.gwho }}</td>
+        </tr>
+        <tr>
+            <th>Où</th>
+            <td>{{ entity.gwhere }}</td>
+        </tr>
+        <tr>
+            <th>Quand</th>
+            <td>{{ entity.gwhen|date('Y-m-d H:i:s')  }}</td>
+        </tr>
+        <tr>
+            <th>Jeu(x)</th>
+            <td>{{ entity.gwhat }}</td>
+        </tr>
+        <tr>
+            <th>Infos</th>
+            <td>{{ entity.ghow }}</td>
+        </tr>
+        
+        <tr>
+            <th>Email</th>
+            <td><a href="mailto:{{ entity.email }}?subject=Mon sujet de mail&body=Bonjour">{{ entity.email }}</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<a class="btn info" href="{{ path('party') }}">Back to the list</a>
+
+{% endblock body %}

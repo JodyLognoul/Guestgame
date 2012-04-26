@@ -1,0 +1,111 @@
+#login-zone{
+    width: 291px;
+    margin: 100px auto 0 auto;
+}
+#login-zone h1{
+     -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(center top , #404040, #595959) repeat scroll 0 0 transparent;
+    border-color: #404040 #404040  #595959;
+    border-radius: 6px 6px 0 0;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px 18px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
+}
+#login-zone-form{        
+    background-color: #E8E8E8;/*#F5F5F5;*/
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+    padding: 30px 40px;
+    /**/
+       
+    background-repeat: repeat-x;
+    border-radius: 0 0 6px 6px;
+    margin-bottom: 18px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+#login-zone-form label{
+    float: inherit;
+    font-size: 1.1em;
+}
+#login-zone-form input{
+    margin: 5px 0 15px 0;
+}
+#login-name, #login-pass{
+    font-size: 1.3em;
+    padding: 5px;
+    width: 200px  !important;
+    height: 20px;
+}
+#remember_me{
+    margin: 0 0 0 0;
+    width: inherit !important;
+}
+#login-submit{
+    margin:15px 0 10px 0;
+}
+/* FORMULAIRE */
+#register-form label{
+    width: 100px;
+    margin: 0 10px 0 0 ;
+    padding: 5px;
+}
+#register-form{
+    display: inline-block;
+    width: 360px;
+    border-right: 1px #808080 solid;
+    padding-top: 20px;
+    padding-right: 34px;    
+}
+.form-elem{
+    margin: 0 0 15px 0;
+}
+
+.form-elem select{
+    width: 70px;
+}
+#fos_user_registration_form_plainPassword{
+    margin-top: 15px;
+}
+#fos_user_registration_form_plainPassword div{
+    margin: 0 0 15px 0;
+}
+#form-optional-message, #form-required-message{
+    /*float: right; */
+    margin: 0 0 25px 0;    
+}
+#form-required-message{
+    color: #CB0010;    
+}
+#form-optional-message{
+    color: grey;
+}
+
+#register-form-info{
+    margin-left: 50px;
+    display: inline-block;
+    width: 360px;
+    vertical-align: top;
+}
+#register-form-info li{
+     list-style: disc url(../../images/puce-vu.png);
+     padding: 5px;
+}
+#register-form-submit{
+    margin: 15px 0 0 120px;
+}
+#register-form-errors{
+    width: 800px;
+}
+#register-form-confirmed-msg{
+    margin: 0px 0px 15px 0px;    
+}
