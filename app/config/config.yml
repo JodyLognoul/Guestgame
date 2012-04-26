@@ -3,9 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: "@ggSiteBundle/Resources/config/menu.xml" }    
 
-knp_menu:
-    twig: true
-
 framework:
     #esi:             ~
     translator:      { fallback: en }
