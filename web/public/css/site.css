@@ -46,9 +46,10 @@ h1#header-titles{
     margin: 16px 0 0 40px;
     vertical-align: top;
     display: inline-block;
-    width: 520px;    
+    width: 513px;    
 }
 #header-nav ul li{
+    float: right;
     margin-right: 15px;
     display: inline;
 }
@@ -100,35 +101,7 @@ h1#header-titles{
     -webkit-border-radius: 6px;
     -moz-border-radius:6px;  
 }
-#slider{  
-    margin: 15px 0 0 0;
-    width: auto;    
-}
-.slider-elem{
-    padding: 20px;
-}
-.slider-elem h3{
-    color: #71452b;
-    font-size: 1.3em;
-    margin-bottom: 10px;
-}
-.slider-elem p{  
-    margin-bottom: 10px;
-    width: 900px;
-}
-.slider-elem img{  
-    float: left;
-    margin-right: 25px;
-}
-#presentation{
-    margin: 15px 0 0 0;
-    width: auto;
-    height: 450px;
-}
 
-.to-the-top{
-    float: right;
-}
 h2.title{
     font-size: 1.4em;
     margin: 0px 0px 20px 0px;
@@ -142,10 +115,7 @@ h2.title{
     width: 440px;
     float: left;
 }
-div#header-nav ul .last{
-    float: right;
-    margin-right: 0;
-}
+
 div#footer-main{
     width:1024px; 
     height:150px;
@@ -154,16 +124,12 @@ div#footer-main{
     border-top: 1px solid #595959;
     height: 50px;
 }
-p.presentation{
-    font-size:1.1em;
-}
+
 p#member-count{
    float: right;
    margin-left: 20px;    
 }
-div#footer-main ul{
-    float: left;
-}
+
 div#footer-main img{
     float: right;
     width: 35px;
@@ -213,4 +179,11 @@ input[type=email]:focus{
 
 .table th {
     border-bottom-width: 1px;
+}
+#sidebar img{
+    margin-bottom:5px;
+    width:185px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;  
 }

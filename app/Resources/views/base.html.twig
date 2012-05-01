@@ -17,6 +17,9 @@
                 <a href="{{ path('homepage') }}"><img src="{{ asset('public/images/logo.png') }}"/>
                 <h1 id="header-titles">Guest<span style="color:#ff7b00;">g</span>ame</h1>
                 <span id="slogan">On joue aussi près de chez vous !</span></a>
+                 <ul>
+                    <li><a href="">A propos</a></li>
+                </ul>                  
             </div>
         </div>
         <div id="main-container">
@@ -24,25 +27,11 @@
                 {% block body %} {% endblock %}
             </div>
             <div id="sidebar">
-                <div id="sideblock-picture" class="bloc sidebar">
-                    {% block sideblockpicture %}
-                        <h5>PictureS</h5>
-                    {% endblock %}
-                </div>
-                <div id="sideblock-parties" class="bloc sidebar">
-                    {% block sideblockparties %}
-                        <h5>
-                        Dernières parties
-                        </h5>
-                    {% endblock %}
-                </div>
-                <div id="sideblock-comment" class="bloc sidebar">
-                    {% block sideblockcomment %}
-                        <h5>
-                        Derniers commentaires
-                        </h5>
-                    {% endblock %}
-                </div>
+                <img src="{{ asset('public/images/hp_lan.jpg') }}">
+                <img src="{{ asset('public/images/hp_bg.jpg') }}">
+                <img src="{{ asset('public/images/hp_rp.jpg') }}">                
+                <!--div id="sideblock-comment" class="bloc sidebar">                    
+                </div-->
             </div>            
         </div>
         <div id="footer-main">        
