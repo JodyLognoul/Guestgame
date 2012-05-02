@@ -29,8 +29,14 @@
         
         <tr>
             <th>Email</th>           
-            <td><a class="btn" data-toggle="modal" href="#writeDialog">{{ entity.email }}</a></td>
+            <td><a class="btn" data-toggle="modal" href="#writeDialog"><i class="icon-envelope"></i> {{ entity.email }}</a></td>
         </tr>
+
+         <tr>
+            <th></th>           
+            <td><a class="btn btn-info" href="{{ path('party') }}">Back to the list</a></td>
+        </tr>
+
     </tbody>
 </table>
 <div class="modal hide" id="writeDialog">
@@ -46,6 +52,5 @@
         <a href="#" class="btn btn-primary">Save changes</a>
     </div>
 </div>
-<a class="btn btn-info" href="{{ path('party') }}">Back to the list</a>
 
 {% endblock body %}

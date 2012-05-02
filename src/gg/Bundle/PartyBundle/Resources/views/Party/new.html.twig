@@ -1,54 +1,56 @@
 {% extends "ggPartyBundle::layout.html.twig" %}
 
 {% block body %}
-    <div class="title-page">
-        <img src="{{ asset('public/images/new-party.png') }}"/>
-        <h2 class="title">Nouvelle partie</h2>
-    </div>                     
-    <form action="{{ path('party_create') }}" method="post" {{ form_enctype(form) }}>
-        <div id="new-party-form"> 
-            <div class="clearfix">
-                {{ form_label(form.gwho,'Qui êtes vous') }}
-                <div class="input">
-                    {{ form_widget(form.gwho) }}    
+    <h4>Nouvelle partie</h4>
+    <br />
+    <form id="form-new-party"class="form-horizontal" action="{{ path('party_create') }}" method="post" {{ form_enctype(form) }}>
+        <fieldset>
+            <div class="control-group">
+                {{ form_label(form.gwho, 'Qui êtes vous', { 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(form.gwho,{ 'attr': {'class': 'input-xlarge',' rows':'3'}}) }}    
                 </div>
             </div>
-            <div class="clearfix">
-                {{ form_label(form.gwhere,'Où se déroule la partie') }}
-                <div class="input">
-                {{ form_widget(form.gwhere, { 'attr': {'class': 'xlarge'}}) }}    
+            <div class="control-group">
+                {{ form_label(form.gwhere,'Où se déroule la partie', { 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                {{ form_widget(form.gwhere, { 'attr': {'class': 'input-xlarge'}}) }}    
                 </div>
             </div>
-            <div class="clearfix">
-                {{ form_label(form.gwhen,'Date partie') }}
-                <div class="input">    
+            <div class="control-group">
+                {{ form_label(form.gwhen,'Date partie',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">    
                 {{ form_widget(form.gwhen,{'attr':{'class':'datepicker input-date span3'}}) }}    
                 </div>
             </div>
-            <div class="clearfix">
-                {{ form_label(form.gwhat,'A quel jeu prévoyez vous de jouer') }}
-                <div class="input">
-                    {{ form_widget(form.gwhat) }}    
+            <div class="control-group">
+                {{ form_label(form.gwhat,'A quel jeu prévoyez vous de jouer',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(form.gwhat,{ 'attr': {'class': 'input-xlarge',' rows':'3'}}) }}    
                 </div>
             </div>
-            <div class="clearfix">
-                {{ form_label(form.ghow,'Infos complémentaire') }}
-                <div class="input">
-                    {{ form_widget(form.ghow) }}    
+            <div class="control-group">
+                {{ form_label(form.ghow,'Infos complémentaire',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(form.ghow,{ 'attr': {'class': 'input-xlarge',' rows':'3'}}) }}    
                 </div>
             </div>
-            <div class="clearfix">
-                {{ form_label(form.email,'Votre email') }}
-                <div class="input">
-                    {{ form_widget(form.email) }}    
+            <div class="control-group">
+                {{ form_label(form.email,'Votre email',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(form.email,{ 'attr': {'class': 'input-xlarge'}}) }}    
                 </div>
             </div>
+            <div class="control-group">                
+                <div class="controls">
+                    <button class="btn btn-success" type="submit">Create</button>    
+                    <a class="btn btn-primary" href="{{ path('party') }}">Back to the list</a>
+                </div>
+            </div>            
+        </fieldset>
         {{ form_rest(form) }}
-        </div>
-        <div style="margin-top: 25px;">    
-            <button class="btn gvalid" type="submit">Create</button>
-            <a class="btn primary" href="{{ path('party') }}">Back to the list</a>
-        </div>
+        
+        
     </form>    
 {% endblock body %}
 {% block script %}    
