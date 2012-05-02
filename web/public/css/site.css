@@ -172,6 +172,9 @@ div#footer-main img{
     -moz-border-radius: 10px;
     border-radius: 10px;  
 }
+#table-search_filter{
+    margin-bottom: 20px;
+}
 #table-search_filter input{
     display: inline;
 }
