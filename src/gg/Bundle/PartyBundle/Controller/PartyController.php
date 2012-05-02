@@ -44,7 +44,7 @@ class PartyController extends Controller
             ->setBody($form->getData()->getGcontent());
 
             $this->get('mailer')->send($message);
-
+            $this->get('session')->setFlash('sucess_send_mail','Message envoyé !');
             //GOOD FORM
             return $this->redirect($this->generateUrl('party_show', array('id' => $id)));
         }
