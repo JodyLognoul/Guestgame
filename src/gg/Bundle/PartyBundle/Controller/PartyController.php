@@ -7,7 +7,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use gg\Bundle\PartyBundle\Entity\Party;
+use gg\Bundle\PartyBundle\Entity\Mail;
 use gg\Bundle\PartyBundle\Form\PartyType;
+use gg\Bundle\PartyBundle\Form\MailType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Party controller.
@@ -16,7 +19,38 @@ use gg\Bundle\PartyBundle\Form\PartyType;
  */
 class PartyController extends Controller
 {
-    
+    /**
+     * Lists all Party entities.
+     *
+     * @Route("/{id}/partysendemail", name="partysendemail")
+     * @Template()
+     */
+    public function sendEmailAction($id)
+    {
+        $entity  = new Mail();
+        $request = $this->getRequest();
+        $form    = $this->createForm(new MailType(), $entity);
+        $form->bindRequest($request);
+
+        if ($form->isValid()) {
+
+            $em = $this->getDoctrine()->getEntityManager();    
+            $party = $em->getRepository('ggPartyBundle:Party')->find($id);
+
+            $message = \Swift_Message::newInstance()
+            ->setSubject($form->getData()->getGsubject())
+            ->setFrom($form->getData()->getGfrom())
+            ->setTo($party->getEmail())
+            ->setBody($form->getData()->getGcontent());
+
+            $this->get('mailer')->send($message);
+
+            //GOOD FORM
+            return $this->redirect($this->generateUrl('party_show', array('id' => $id)));
+        }
+        //BAD FORM
+        return $this->redirect($this->generateUrl('party_show', array('id' => $id)));
+    }
     /**
      * Lists all Party entities.
      *
@@ -40,6 +74,10 @@ class PartyController extends Controller
      */
     public function showAction($id)
     {
+
+        $entityMail = new Mail();
+        $formEmail = $this->createForm(new MailType(), $entityMail);
+        
         $em = $this->getDoctrine()->getEntityManager();    
         $entity = $em->getRepository('ggPartyBundle:Party')->find($id);
 
@@ -51,7 +89,8 @@ class PartyController extends Controller
 
         return array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),        );
+            'form_email'  => $formEmail->createView(),
+            'delete_form' => $deleteForm->createView(),);
     }
 
     /**

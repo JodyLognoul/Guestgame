@@ -44,13 +44,16 @@
         <button class="close" data-dismiss="modal">×</button>
         <h3>Modal header</h3>
     </div>
-    <div class="modal-body">
-        <p>One fine body…</p>
-    </div>
-    <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">Close</a>
-        <a href="#" class="btn btn-primary">Save changes</a>
-    </div>
+
+    <form class="form-horizontal" action="{{ path('partysendemail',{ 'id': entity.id }) }}" method="post" {{ form_enctype(form_email) }}>
+        <div class="modal-body">
+            {{ form_rest(form_email) }}
+        </div>
+        <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn">Close</a>
+            <button type="submit" class="btn btn-success">Save changes</a>
+        </div>
+    </form> 
 </div>
 
 {% endblock body %}
