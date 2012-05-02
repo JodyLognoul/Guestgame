@@ -13,9 +13,6 @@ body{
 table{
     color: black;
 }
-.dataTables_filter label{
-    float:none;
-}
 a:hover{
     text-decoration: none;
 }
@@ -156,13 +153,7 @@ div#footer-main img{
 #organise_party{
     float:right;
 }
-.dataTables_filter{
-    margin-bottom: 25px; 
-}
-#DataTables_Table_0{
-    margin-bottom: 0px; 
-    margin-top: -10px;
-}
+
 #slogan{
     color: #FEF6E9;
     font: 1em "Trebuchet MS";
@@ -186,4 +177,10 @@ input[type=email]:focus{
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;  
+}
+#table-search_filter input{
+    display: inline;
+}
+#table-search{
+    margin:0px;
 }

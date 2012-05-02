@@ -3,7 +3,7 @@
 
 {% block body %}
 <h4>Détail d'une partie</h4>
-
+<br />
 <table class="table">
     <tbody>
         <tr>
@@ -28,25 +28,24 @@
         </tr>
         
         <tr>
-            <th>Email</th>
+            <th>Email</th>           
             <td><a class="btn" data-toggle="modal" href="#writeDialog">{{ entity.email }}</a></td>
         </tr>
     </tbody>
 </table>
-
-<a class="btn info" href="{{ path('party') }}">Back to the list</a>
-
-    <div class="modal" id="writeDialog">
-        <div class="modal-header">
-            <button class="close" data-dismiss="modal">×</button>
-            <h3>Modal header</h3>
-        </div>
-        <div class="modal-body">
-            <p>One fine body…</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="btn">Close</a>
-            <a href="#" class="btn btn-primary">Save changes</a>
-        </div>
+<div class="modal hide" id="writeDialog">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h3>Modal header</h3>
     </div>
+    <div class="modal-body">
+        <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Close</a>
+        <a href="#" class="btn btn-primary">Save changes</a>
+    </div>
+</div>
+<a class="btn btn-info" href="{{ path('party') }}">Back to the list</a>
+
 {% endblock body %}

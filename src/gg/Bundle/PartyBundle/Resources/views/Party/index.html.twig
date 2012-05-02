@@ -12,8 +12,8 @@
         'sun' => 'Dimanche',
         );
 </script>
-<table class="table-search">
-    <a class="btn success" id="organise_party"href="{{ path('party_new') }}">Organiser une partie</a>    
+<table id="table-search" class="table table-condensed">
+    <a class="btn btn-success" id="organise_party"href="{{ path('party_new') }}">Organiser une partie</a>    
     <thead>
         <tr>
             <th>Jour</th>
@@ -31,7 +31,7 @@
             <td>{{ entity.gwhere }}</td>
             <td>{{ entity.gwhat }}</td>
             <td>
-                <a href="{{ path('party_show', { 'id': entity.id }) }}">Detail</a>
+                <a class="btn btn-warning" href="{{ path('party_show', { 'id': entity.id }) }}">Detail</a>
             </td>
         </tr>
     {% endfor %}
