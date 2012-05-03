@@ -31,7 +31,7 @@
             <td>{{ entity.gwhere }}</td>
             <td>{{ entity.gwhat }}</td>
             <td>
-                <a class="btn btn-warning" href="{{ path('party_show', { 'id': entity.id }) }}">Detail</a>
+                <a class="btn btn-warning btn-mini" href="{{ path('party_show', { 'id': entity.id }) }}"><i class="icon-search icon-white"></i> Detail</a>
             </td>
         </tr>
     {% endfor %}

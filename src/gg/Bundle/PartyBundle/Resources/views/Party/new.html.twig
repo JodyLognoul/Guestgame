@@ -3,12 +3,12 @@
 {% block body %}
     <h4>Nouvelle partie</h4>
     <br />
-    <form id="form-new-party"class="form-horizontal" action="{{ path('party_create') }}" method="post" {{ form_enctype(form) }}>
-        <fieldset>
+    <form id="form-new-party" class="form-horizontal" action="{{ path('party_create') }}" method="post" {{ form_enctype(form) }}>
+        <fieldset class="control-group">
             <div class="control-group">
                 {{ form_label(form.gwho, 'Qui êtes vous', { 'attr': {'class': 'control-label'} }) }}
                 <div class="controls">
-                    {{ form_widget(form.gwho,{ 'attr': {'class': 'input-xlarge',' rows':'3'}}) }}    
+                    {{ form_widget(form.gwho,{ 'attr': {'class': 'input-xlarge','rows':'3'}}) }}    
                 </div>
             </div>
             <div class="control-group">
