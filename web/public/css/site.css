@@ -184,3 +184,12 @@ div#footer-main img{
 #form-new-party{
     margin-left: 90px;
 }
+#table-search tr:hover + a{
+    color: green;
+}
+.form-horizontal input:focus:required:invalid:focus, .form-horizontal textarea:focus:required:invalid:focus, .form-horizontal select:focus:required:invalid:focus{
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0 none;
+    color: #555555;
+}
