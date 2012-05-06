@@ -20,7 +20,25 @@ use Symfony\Component\HttpFoundation\Response;
 class PartyController extends Controller
 {
     /**
-     * Lists all Party entities.
+     * Send email for crud action on party.
+     *
+     * @Route("/crudsendmail", name="crudsendmail")
+     * @Template()
+     */
+    public function crudSendMailAction(){
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Hello Email')
+            ->setContentType('text/html')
+            ->setFrom('send@gmail.com')
+            ->setTo('lognoulj@gmail.com')
+            ->setBody($this->renderView('ggPartyBundle:Party:crud_party_mail.html.twig', array('name' => 'JODY')));
+
+            $this->get('mailer')->send($message);
+            return new Response('<p>Sended</p>');
+    }
+
+    /**
+     * send an email to someone.
      *
      * @Route("/{id}/partysendemail", name="partysendemail")
      * @Template()
@@ -130,6 +148,8 @@ class PartyController extends Controller
             $em->flush();
             return $this->redirect($this->generateUrl('party_show', array('id' => $entity->getId())));
             
+            //send crud email
+            //$this->crudSendMail($entity->getEmail());
         }
 
         return array(
