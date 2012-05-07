@@ -63,7 +63,7 @@ class PartyController extends Controller
             ->setFrom($form->getData()->getGfrom())
             ->setTo($party->getEmail())
             ->setBody($this->renderView('ggPartyBundle:Party:mail.html.twig', array(
-                'title' => 'Nouveau message de <a mailto="'.$form->getData()->getGfrom().'">'.$form->getData()->getGfrom().'</a>:',
+                'title' => 'Nouveau message de '.$form->getData()->getGfrom(),
                 'content' => $form->getData()->getGcontent())));
 
             $this->get('mailer')->send($message);
