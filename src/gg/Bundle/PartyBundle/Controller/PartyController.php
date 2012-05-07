@@ -31,7 +31,9 @@ class PartyController extends Controller
             ->setContentType('text/html')
             ->setFrom('send@gmail.com')
             ->setTo('lognoulj@gmail.com')
-            ->setBody($this->renderView('ggPartyBundle:Party:crud_party_mail.html.twig', array('name' => 'JODY')));
+            ->setBody($this->renderView('ggPartyBundle:Party:mail.html.twig', array(
+                'title' => 'Nouveau message !',
+                'content' => 'Coucou !')));
 
             $this->get('mailer')->send($message);
             return new Response('<p>Sended</p>');
@@ -59,7 +61,9 @@ class PartyController extends Controller
             ->setSubject($form->getData()->getGsubject())
             ->setFrom($form->getData()->getGfrom())
             ->setTo($party->getEmail())
-            ->setBody($form->getData()->getGcontent());
+            ->setBody($this->renderView('ggPartyBundle:Party:mail.html.twig', array(
+                'title' => 'Nouveau message !',
+                'content' => $form->getData()->getGcontent())));
 
             $this->get('mailer')->send($message);
             $this->get('session')->setFlash('sucess_send_mail','Message envoyé !');
