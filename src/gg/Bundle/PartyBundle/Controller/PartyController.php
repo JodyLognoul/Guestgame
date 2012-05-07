@@ -60,7 +60,7 @@ class PartyController extends Controller
             $message = \Swift_Message::newInstance()
             ->setSubject($form->getData()->getGsubject())
             ->setContentType('text/html')
-            ->setFrom('admin@guestgame.com')
+            ->setFrom('noreply@guestgame.com')
             ->setTo($party->getEmail())
             ->setBody($this->renderView('ggPartyBundle:Party:mail.html.twig', array(
                 'title' => 'Nouveau message de '.$form->getData()->getGfrom(),
