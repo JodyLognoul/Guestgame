@@ -193,3 +193,6 @@ div#footer-main img{
     outline: 0 none;
     color: #555555;
 }
+p.presentation{
+    font-size: 15px;
+}

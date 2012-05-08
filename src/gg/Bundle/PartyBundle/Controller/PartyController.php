@@ -81,7 +81,7 @@ class PartyController extends Controller
      * @Template()
      */
     public function indexAction()
-    {
+    {        
         $em = $this->getDoctrine()->getEntityManager();
 
         $entities = $em->getRepository('ggPartyBundle:Party')->findAll();
@@ -142,6 +142,7 @@ class PartyController extends Controller
      */
     public function createAction()
     {
+
         $entity  = new Party();
         $request = $this->getRequest();
         $form    = $this->createForm(new PartyType(), $entity);
@@ -149,6 +150,7 @@ class PartyController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
+            $entity->setUrlid(md5(uniqid(rand(),1)));
             $em->persist($entity);
             $em->flush();
             return $this->redirect($this->generateUrl('party_show', array('id' => $entity->getId())));
@@ -166,16 +168,16 @@ class PartyController extends Controller
     /**
      * Displays a form to edit an existing Party entity.
      *
-     * @Route("/{id}/edit", name="party_edit")
+     * @Route("/{urlid}/{id}/edit", name="party_edit")
      * @Template()
      */
-    public function editAction($id)
+    public function editAction($id, $urlid)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('ggPartyBundle:Party')->find($id);
+        $entity = $em->getRepository('ggPartyBundle:Party')->find($id);    
 
-        if (!$entity) {
+        if (!$entity || ($entity->getUrlid() != $urlid)) {
             throw $this->createNotFoundException('Unable to find Party entity.');
         }
 

@@ -63,6 +63,13 @@ class Party {
      */
     private $email;   
 
+    /**
+     * @var string $urlid
+     *
+     * @ORM\Column(name="urlid", type="string", length=32)
+     */
+    private $urlid;
+
 
     /**
      * Get id
@@ -192,5 +199,25 @@ class Party {
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set urlid
+     *
+     * @param string $urlid
+     */
+    public function setUrlid($urlid)
+    {
+        $this->urlid = $urlid;
+    }
+
+    /**
+     * Get urlid
+     *
+     * @return string 
+     */
+    public function getUrlid()
+    {
+        return $this->urlid;
     }
 }

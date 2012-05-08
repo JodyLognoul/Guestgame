@@ -5,7 +5,7 @@ ggPartyBundle:
 
 homepage:
     pattern: /
-    defaults: {_controller: ggPartyBundle:Party:index }
+    defaults: {_controller: ggSiteBundle:Site:homepage }
     requirements:
         _method: GET
 
