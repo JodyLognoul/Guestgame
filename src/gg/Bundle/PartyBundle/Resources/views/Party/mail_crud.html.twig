@@ -52,6 +52,8 @@
                                         <td style="padding: 15px 0 15px;"  valign="top">
                                             <p style="color:#767676; font-weight: normal; margin: 0; padding: 0; line-height: 20px; font-size: 12px;font-family: Helvetica, Arial, sans-serif; ">
                                             Pour visualiser votre partie : <a href="{{ url('party_show', { 'id': party.id }) }}">{{ url('party_show', { 'id': party.id }) }}</a>
+                                            <br />
+                                            Pour la modifier : <a href="{{ path('party_edit', {'id': party.id , 'urlid': party.urlid })}}">Edit</a>
                                             </p><br>
                                             
                                             <img src="{{ asset('public/images/divider_wide.png') }}" alt="" style="border-top: 10px solid #fff;width: 558px">
