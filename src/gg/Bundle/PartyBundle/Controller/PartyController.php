@@ -29,10 +29,10 @@ class PartyController extends Controller
         $message = \Swift_Message::newInstance()
             ->setSubject('Hello Email')
             ->setContentType('text/html')
-            ->setFrom('send@gmail.com')
+            ->setFrom('admin@guestgame.com')
             ->setTo('lognoulj@gmail.com')
             ->setBody($this->renderView('ggPartyBundle:Party:mail.html.twig', array(
-                'title' => 'Nouveau message !',
+                'title' => '',
                 'content' => 'Coucou !')));
 
             $this->get('mailer')->send($message);
@@ -153,10 +153,19 @@ class PartyController extends Controller
             $entity->setUrlid(md5(uniqid(rand(),1)));
             $em->persist($entity);
             $em->flush();
-            return $this->redirect($this->generateUrl('party_show', array('id' => $entity->getId())));
             
             //send crud email
-            //$this->crudSendMail($entity->getEmail());
+            $message = \Swift_Message::newInstance()
+            ->setSubject('[Guestgame] Confirmation - partie créée !')
+            ->setContentType('text/html')
+            ->setFrom('admin@guestgame.com')
+            ->setTo($entity->getEmail())
+            ->setBody($this->renderView('ggPartyBundle:Party:mail_crud.html.twig', array(
+                'party' => $entity)));
+
+            $this->get('mailer')->send($message);
+
+            return $this->redirect($this->generateUrl('party_show', array('id' => $entity->getId())));
         }
 
         return array(
