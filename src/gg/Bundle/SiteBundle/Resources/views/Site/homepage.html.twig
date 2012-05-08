@@ -5,16 +5,21 @@
 
 {% block body %}
         <p>
-        Bienvenu sur <b>guestgame.com</b>, votre organisateur de parties de jeux de plateau, jeux de
-        rôle et autres.
+        Bienvenu sur <strong>guestgame.com</strong>, votre organisateur de parties de jeux de plateau, jeux de
+        rôle et lan's.
         <br /><br />
-        Le but de ce site, est de vous permettre d’<b>organiser</b> une partie de jeu chez vous, ou de
-        <b>rejoindre</b> une partie que quelqu’un de votre région organise (un ami par exemple).
+        Sur Guestgame, vous avez deux options: <strong>rejoindre</strong> ou <strong>organiser</strong> une partie de jeu.
         <br /><br />
-        Vous êtes ainsi en contact avec d’autres personnes qui partagent votre passion du jeu.
+        Si vous <strong>organisez</strong>, vous devez renseigner quelques informations d'ordre pratique, comme par exemple: la <em>date</em>, l'<em>heure</em> et le <em>lieu</em> de la partie, ainsi que votre <em>adresse email</em> afin que les personnes interessées puissent vous contacter. Vous pouvez également joindre d'autres informations pour donner envie a quidam de rejoindre votre partie. 
+        <br /><br />
+        Pour <strong>rejoindre une partie</strong>, c'est encore plus simple. Vous devez juste envoyer une message à la personne pour lui communiquer vos motivations. Le formulaire se trouver dans le <strong>détail</strong> de la partie.
+        <br /><br />
+        Pour <strong>modifier</strong> ou <strong>annuler</strong> une partie, vous pouvez utiliser les liens reçus par email lors de la création de la partie.
+        <br /><br />
+        Bon jeu à tous !
         </p>
         <br />
-        <a class="btn btn-success btn-large"href="{{ path('party') }}">Trouver une partie</a>
+        <a class="btn btn btn-success btn-large"href="{{ path('party') }}">Trouver une partie</a>
 {% endblock %}     
 
 {% block script %}    
