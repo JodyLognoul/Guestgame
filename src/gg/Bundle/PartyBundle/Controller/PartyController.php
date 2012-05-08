@@ -164,6 +164,7 @@ class PartyController extends Controller
                 'party' => $entity)));
 
             $this->get('mailer')->send($message);
+            $this->get('session')->setFlash('create_sucess_send_mail','Message envoyé !');
 
             return $this->redirect($this->generateUrl('party_show', array('id' => $entity->getId())));
         }
@@ -228,7 +229,7 @@ class PartyController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('party_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('party_show', array('id' => $id)));
         }
 
         return array(

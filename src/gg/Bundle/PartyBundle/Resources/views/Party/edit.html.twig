@@ -1,36 +1,59 @@
 {% extends "ggPartyBundle::layout.html.twig" %}
 
 {% block body %}
-<div id="container" class="bloc">
-<h1>Party edit</h1>
+<h4>Party edit</h4>
+<br />
 
-<form action="{{ path('party_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    <div>
-        {{ form_label(edit_form.StartingDate,'Début') }}
-        {{ form_widget(edit_form.StartingDate,{'attr':{'class':'datepicker input-date'}}) }}    
-    </div>
-    <div>
-        {{ form_label(edit_form.EndingDate,'Fin') }}
-        {{ form_widget(edit_form.EndingDate,{'attr':{'class':'datepicker input-date'}}) }}    
-    </div>
-    {{ form_rest(edit_form) }}
-    <p>
-        <button type="submit">Edit</button>
-    </p>
+<form id="form-new-party" class="form-horizontal" action="{{ path('party_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+     <fieldset class="control-group">
+            <div class="control-group">
+                {{ form_label(edit_form.gwho, 'Qui êtes vous', { 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(edit_form.gwho,{ 'attr': {'class': 'input-xlarge','rows':'3'}}) }}    
+                </div>
+            </div>
+            <div class="control-group">
+                {{ form_label(edit_form.gwhere,'Où se déroule la partie', { 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                {{ form_widget(edit_form.gwhere, { 'attr': {'class': 'input-xlarge'}}) }}    
+                </div>
+            </div>
+            <div class="control-group">
+                {{ form_label(edit_form.gwhen,'Date partie',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">    
+                {{ form_widget(edit_form.gwhen,{'attr':{'class':'datepicker input-date span3'}}) }}    
+                </div>
+            </div>
+            <div class="control-group">
+                {{ form_label(edit_form.gwhat,'A quel jeu prévoyez vous de jouer',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(edit_form.gwhat,{ 'attr': {'class': 'input-xlarge',' rows':'3'}}) }}    
+                </div>
+            </div>
+            <div class="control-group">
+                {{ form_label(edit_form.ghow,'Infos complémentaire',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(edit_form.ghow,{ 'attr': {'class': 'input-xlarge',' rows':'3'}}) }}    
+                </div>
+            </div>
+            <div class="control-group">
+                {{ form_label(edit_form.email,'Votre email',{ 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(edit_form.email,{ 'attr': {'class': 'input-xlarge'}}) }}    
+                </div>
+            </div>
+            <div class="control-group">                
+                <div class="controls">
+                    <button class="btn btn-success" type="submit">Update</button>    
+                    <a class="btn btn-primary" href="{{ path('party') }}">Back to the list</a>                              
+                </div>
+            </div>            
+        </fieldset>
+        {{ form_rest(edit_form) }}
+</form>
+<form action="{{ path('party_delete', { 'id': entity.id }) }}" method="post">
+    {{ form_widget(delete_form) }}
+<button class="btn btn-danger" type="submit">Delete</button>
 </form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('party') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('party_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
-</div>
 {% endblock body %}

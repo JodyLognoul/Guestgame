@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Party {
 
+    function __construct() {
+        $this->gwhen = new \DateTime();
+    }
+
     /**
      * @var integer $id
      *
@@ -118,8 +122,8 @@ class Party {
      */
     public function getGwhen()
     {
-        return $this->gwhen;
-    }
+        return $this->gwhen->format('Y-m-d H:i:s');
+    }    
 
     /**
      * Set gwhere

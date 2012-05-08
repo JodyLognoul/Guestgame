@@ -12,7 +12,7 @@ class PartyType extends AbstractType {
                 ->add('gwho', 'textarea')
                 ->add('ghow', 'textarea')
                 ->add('gwhat', 'textarea')
-                ->add('gwhen', 'text')
+                ->add('gwhen', 'text',array('data'=>'uhuhu'))
                 ->add('gwhere')
                 ->add('email','email')
         ;

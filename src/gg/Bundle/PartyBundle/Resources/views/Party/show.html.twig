@@ -10,6 +10,12 @@
         Message envoyé !
     </div>
 {% endif %}
+{% if app.session.flash('create_sucess_send_mail') %}
+    <div class="alert alert-info fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        Un email de confirmation vient d'être envoyé à {{entity.email }}. Pour modifier ou supprimer la partie, veuillez utiliser le lien indiqué dans cet email.
+    </div>
+{% endif %}
 <table class="table">
     <tbody>
         <tr>
@@ -22,7 +28,7 @@
         </tr>
         <tr>
             <th>Quand</th>
-            <td>{{ entity.gwhen|date('Y-m-d H:i:s')  }}</td>
+            <td>{{ entity.gwhen|date("d/M/Y") }}</td>
         </tr>
         <tr>
             <th>Jeu(x)</th>
