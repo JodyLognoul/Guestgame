@@ -6,11 +6,11 @@
         {% block css %}        
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}" type="text/css" media="screen" />                   
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}" type="text/css" media="screen" />   
-            <link rel="stylesheet" href="{{ asset('public/css/ui/jquery.timepicker.css') }}" type="text/css" media="screen" />           
+            <link rel="stylesheet" href="{{ asset('public/css/ui/jquery.timepicker.css') }}" type="text/css" media="screen" /           
             <link rel="stylesheet" href="{{ asset('public/css/ui/jquery.ui.all.css') }}" type="text/css" media="screen" />           
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-         
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <div id="header-nav-bg">
@@ -19,8 +19,8 @@
                 <h1 id="header-titles">Guest<span style="color:#ff7b00;">g</span>ame</h1>
                 <span id="slogan">On joue aussi près de chez vous !</span></a>
                  <ul>
-                    <li><a href="">A propos</a></li>
-                    <li><a href="{{ path('party') }}">Parties</a></li>
+                    <li><a href="">Info</a></li>
+                    <li><a href="{{ path('party') }}">Partie</a></li>
                     <li><a href="{{ path('homepage') }}">Accueil</a></li>
                 </ul>                  
             </div>
