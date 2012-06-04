@@ -6,8 +6,14 @@
 
 <p style="padding:10px;background-color:grey;border-radius:5px;"><strong>{{ entity.title }}</strong></p>
 <div id="lescommentaires">
+{% set inc = 1 %}    
 {% for comment in comments %}
-    <p style="padding:10px;background-color:silver;border-radius:5px;width:400px;">Comment by <i>{{comment.authorpseudo}}</i>:<br />{{comment.content}}</p>
+    {% if inc is divisibleby(2) %}
+        <p style="padding:10px;background-color:silver;border-radius:5px;width:400px;margin-left:auto;">Comment by <i>{{comment.authorpseudo}}</i>:<br />{{comment.content}}</p>
+    {% else %}
+        <p style="padding:10px;background-color:silver;border-radius:5px;width:400px;">Comment by <i>{{comment.authorpseudo}}</i>:<br />{{comment.content}}</p>            
+    {% endif %}
+    {% set inc = inc + 1 %}
 {% endfor %}
 </div>
 <br />
