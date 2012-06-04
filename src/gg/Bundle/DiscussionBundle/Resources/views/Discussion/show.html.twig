@@ -9,9 +9,9 @@
 {% set inc = 1 %}    
 {% for comment in comments %}
     {% if inc is divisibleby(2) %}
-        <p style="padding:10px;background-color:silver;border-radius:5px;width:400px;margin-left:auto;">Comment by <i>{{comment.authorpseudo}}</i>:<br />{{comment.content}}</p>
+        <p style="padding:10px;background-color:silver;border-radius:5px;width:385px;margin-left:auto;"><strong>{{comment.authorpseudo}}</strong> says :<br />{{comment.content}}</p>
     {% else %}
-        <p style="padding:10px;background-color:silver;border-radius:5px;width:400px;">Comment by <i>{{comment.authorpseudo}}</i>:<br />{{comment.content}}</p>            
+        <p style="padding:10px;background-color:silver;border-radius:5px;width:385px;"><strong>{{comment.authorpseudo}}</strong> says :<br />{{comment.content}}</p>            
     {% endif %}
     {% set inc = inc + 1 %}
 {% endfor %}
