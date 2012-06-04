@@ -1,3 +1,8 @@
+ggDiscussionBundle:
+    resource: "@ggDiscussionBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 ggPartyBundle:
     resource: "@ggPartyBundle/Controller/"
     type:     annotation
@@ -9,12 +14,11 @@ homepage:
     requirements:
         _method: GET
 
-
-
 ggSiteBundle:
     resource: "@ggSiteBundle/Controller/"
     type:     annotation
     prefix:   /
+
 
 # Internal routing configuration to handle ESI
 #_internal:

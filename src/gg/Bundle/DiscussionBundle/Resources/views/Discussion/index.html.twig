@@ -1,0 +1,18 @@
+{% extends "ggDiscussionBundle::layout.html.twig" %}
+
+{% block body %}
+<h4>Discussion list</h4>
+<br />
+<table class="records_list">
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('discussion_show', { 'id': entity.id }) }}">{{ entity.title }}</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br />
+<a class="btn btn-sucess" href="{{ path('discussion_new') }}">Nouvelle discution</a>
+
+{% endblock body %}

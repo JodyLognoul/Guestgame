@@ -1,0 +1,34 @@
+{% extends "ggDiscussionBundle::layout.html.twig" %}
+
+{% block body %}
+<h4>Nouvelle discussion</h4>
+<br />
+<form class="form-horizontal" action="{{ path('discussion_create') }}" method="post" {{ form_enctype(form) }}>
+    <fieldset class="control-group">
+    	<div class="control-group">
+                {{ form_label(form.title, "Titre de l'article", { 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(form.title,{ 'attr': {'class': 'input-xlarge'}}) }}    
+            	</div>
+        </div>
+        <div class="control-group">
+                {{ form_label(form.authorpseudo, "Pseudo", { 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(form.authorpseudo,{ 'attr': {'class': 'input-xlarge'}}) }}    
+            	</div>
+        </div>
+        <div class="control-group">
+                {{ form_label(form.authoremail, "Adresse email", { 'attr': {'class': 'control-label'} }) }}
+                <div class="controls">
+                    {{ form_widget(form.authoremail,{ 'attr': {'class': 'input-xlarge'}}) }}    
+            	</div>
+        </div>
+       {{ form_rest(form) }}
+    </fieldset>
+    <p>
+        <a class="btn btn-info" href="{{ path('discussion') }}">Retour aux discussion</a>
+        <button class="btn btn-success" type="submit">Create</button>
+    </p>
+</form>
+
+{% endblock body %}

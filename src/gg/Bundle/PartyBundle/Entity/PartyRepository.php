@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class PartyRepository extends EntityRepository
 {
+	public function findAllOrderedByName()
+    {
+    	$manager = $this->getEntityManager();
+        return $manager->createQuery('SELECT p FROM ggPartyBundle:Party p WHERE p.gwhen < CURRENT_DATE()')
+            ->getResult();
+    }
 }

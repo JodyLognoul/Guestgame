@@ -6,7 +6,7 @@
         {% block css %}        
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}" type="text/css" media="screen" />                   
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}" type="text/css" media="screen" />   
-            <link rel="stylesheet" href="{{ asset('public/css/ui/jquery.timepicker.css') }}" type="text/css" media="screen" /           
+            <link rel="stylesheet" href="{{ asset('public/css/ui/jquery.timepicker.css') }}" type="text/css" media="screen" />
             <link rel="stylesheet" href="{{ asset('public/css/ui/jquery.ui.all.css') }}" type="text/css" media="screen" />           
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
@@ -20,6 +20,7 @@
                 <span id="slogan">On joue aussi près de chez vous !</span></a>
                  <ul>
                     <li><a href="">Info</a></li>
+                    <li><a href="{{ path('discussion') }}">Discussion</a></li>
                     <li><a href="{{ path('party') }}">Partie</a></li>
                     <li><a href="{{ path('homepage') }}">Accueil</a></li>
                 </ul>                  
@@ -51,6 +52,7 @@
         <script type="text/javascript" src="{{ asset('public/js/jquery.guestgame.js') }}"></script>
         <script type="text/javascript" src="{{ asset('public/js/jquery.dataTables.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('public/js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('public/js/discussion.js') }}"></script>
         {% block script %}             
             <script type="text/javascript">
                 $('.datepicker').datetimepicker({
