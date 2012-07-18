@@ -1,0 +1,159 @@
+<?php
+
+/* ggPartyBundle:Party:mail_crud.html.twig */
+class __TwigTemplate_098f51d09be3263dfb3caf191857e2d5 extends Twig_Template
+{
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo "<html lang=\"en\">
+    <head>
+        <meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\">
+        <title>
+            Modern
+        </title>
+        <style type=\"text/css\">
+            a:hover { text-decoration: none !important; }
+            .header h1 {color: #FEF6E9 !important; font: bold 32px Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 40px;}
+            .header p {color: #c6c6c6; font: normal 12px Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 18px;}
+
+            .content h2 {color:#646464 !important; font-weight: bold; margin: 0; padding: 0; line-height: 26px; font-size: 18px; font-family: Helvetica, Arial, sans-serif;  }
+            .content p {color:#767676; font-weight: normal; margin: 0; padding: 0; line-height: 20px; font-size: 12px;font-family: Helvetica, Arial, sans-serif;}
+            .content a {color: #0eb6ce; text-decoration: none;}
+            .footer p {font-size: 11px; color:#7d7a7a; margin: 0; padding: 0; font-family: Helvetica, Arial, sans-serif;}
+            .footer a {color: #0eb6ce; text-decoration: none;}
+        </style>
+    </head>
+    <body style=\"margin: 0; padding: 0; background: #4b4b4b url('http://guestgame.com/public/images/bg_email.png');\" bgcolor=\"#4b4b4b\">
+        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\" style=\"padding: 35px 0; background: #4b4b4b url('http://guestgame.com/public/images/bg_email.png');\">
+            <tr>
+                <td align=\"center\" style=\"margin: 0; padding: 0; background: url('http://guestgame.com/public/images/bg_email.png') ;\" >
+                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"600\" style=\"font-family: Helvetica, Arial, sans-serif; background:#2a2a2a;\" class=\"header\">
+                        <tr>
+                            <td width=\"600\" align=\"left\" style=\"padding: font-size: 0; line-height: 0; height: 7px;\" height=\"7\" colspan=\"2\"><img src=\"http://guestgame.com/public/images/bg_header.png\"></td>
+                        </tr>
+                        <tr>
+                            <td width=\"85\"style=\"font-size: 0px;\">            
+                                <img style=\"margin-left:15px;\" src=\"http://guestgame.com/public/images/logo.png\" width=\"50\">
+                            </td>
+                            <td width=\"580\" align=\"left\" style=\"padding: 18px 0 10px;\">        
+                                <h1 style=\"color: #FEF6E9; font: bold 32px Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 40px;\">Guest<span style=\"color:#ff7b00;\">g</span>ame</h1>
+                                <p style=\"color: #c6c6c6; font: normal 12px Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 18px;\"><i>On joue aussi près de chez vous !</i></p>
+                            </td>
+                        </tr>
+                    </table><!-- header-->
+                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"600\" style=\"font-family: Helvetica, Arial, sans-serif; background: #fff;\" bgcolor=\"#fff\">
+
+                        <tr>
+                            <td width=\"600\" valign=\"top\" align=\"left\" style=\"font-family: Helvetica, Arial, sans-serif; padding: 0 0 0;\" class=\"content\">
+                                <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\"  style=\"color: #717171; font: normal 11px Helvetica, Arial, sans-serif; margin: 0; padding: 0;\" width=\"600\">
+
+                                    <tr>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("public/images/spacer.gif"), "html", null, true);
+        echo "\"  width=\"20\"></td>
+                                        <td style=\"padding: 20px 0 0;\" align=\"left\">      
+                                            <h2 style=\"color:#646464; font-weight: bold; margin: 0; padding: 0; line-height: 26px; font-size: 18px; font-family: Helvetica, Arial, sans-serif; \">Merci d'avoir créé une partie sur guestgame !</h2>
+                                        </td>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"";
+        // line 48
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("public/images/spacer.gif"), "html", null, true);
+        echo "\"  width=\"20\"></td>
+                                    </tr>
+                                    <tr>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"";
+        // line 51
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("public/images/spacer.gif"), "html", null, true);
+        echo "\"  width=\"20\"></td>
+                                        <td style=\"padding: 15px 0 15px;\"  valign=\"top\">
+                                            <p style=\"color:#767676; font-weight: normal; margin: 0; padding: 0; line-height: 20px; font-size: 12px;font-family: Helvetica, Arial, sans-serif; \">
+                                            Pour visualiser votre partie : <a href=\"";
+        // line 54
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("party_show", array("id" => $this->getAttribute($this->getContext($context, "party"), "id"))), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("party_show", array("id" => $this->getAttribute($this->getContext($context, "party"), "id"))), "html", null, true);
+        echo "</a>
+                                            <br />
+                                            Pour la modifier ou la supprimer : <a href=\"";
+        // line 56
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("party_edit", array("id" => $this->getAttribute($this->getContext($context, "party"), "id"), "urlid" => $this->getAttribute($this->getContext($context, "party"), "urlid"))), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("party_edit", array("id" => $this->getAttribute($this->getContext($context, "party"), "id"), "urlid" => $this->getAttribute($this->getContext($context, "party"), "urlid"))), "html", null, true);
+        echo "</a>
+                                            </p><br>
+                                            
+                                            <img src=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("public/images/divider_wide.png"), "html", null, true);
+        echo "\" alt=\"\" style=\"border-top: 10px solid #fff;width: 558px\">
+                                        </td>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"";
+        // line 61
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("public/images/spacer.gif"), "html", null, true);
+        echo "\"  width=\"20\"></td>
+                                    </tr>
+                                    <!--tr>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"images/spacer.gif\"  width=\"20\"></td>
+                                        <td style=\"padding: 0 0 0 0;\" align=\"left\">     
+                                            <h2 style=\"color:#646464; font-weight: bold; margin: 0; padding: 0; line-height: 26px; font-size: 18px; font-family: Helvetica, Arial, sans-serif; \">Infos</h2>
+                                        </td>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"images/spacer.gif\"  width=\"20\"></td>
+                                    </tr>
+                                    <tr>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"images/spacer.gif\"  width=\"20\"></td>
+                                        <td style=\"padding: 10px 0 45px;\"  valign=\"top\">
+                                            <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"558\">
+                                                <tr>
+                                                    <td valign=\"top\">   
+                                                        <img src=\"http://guestgame.com/public/images/hp_bg.jpg\" style=\"border: 1px solid #e9e9e9;\" alt=\"\">
+                                                    </td>
+                                                    <td valign=\"top\" style=\"padding: 0 0 20px 20px\">
+                                                        <p style=\"color:#767676; font-weight: normal; margin: 0; padding: 0; line-height: 20px; font-size: 12px;font-family: Helvetica, Arial, sans-serif; \">
+                                                            Quisque tempor sagittis felis ut aliquam. Quisque pretium purus vel libero tempus nec interdum ligula fringilla. Morbi congue nibh sed justo tincidunt tristique. <a href=\"#\" style=\"color: #0eb6ce; text-decoration: none;\">Suspendisse potenti</a>. Nam ornare porta dui a feugiat. Ut aliquet dapibus mi eu sagittis. </p><br>
+                                                        <p style=\"color:#767676; font-weight: normal; margin: 0; padding: 0; line-height: 20px; font-size: 12px;font-family: Helvetica, Arial, sans-serif; \">In commodo tristique neque suscipit accumsan. Integer orci nisi, gravida in rutrum at, convallis vitae ante. Nunc molestie est bibendum ipsum  <a href=\"#\" style=\"color: #0eb6ce; text-decoration: none;\">ultricies consectetur</a>.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                            <img src=\"images/divider_wide.png\" alt=\"\" style=\"border-top: 10px solid #fff; width: 558px\">
+                                        </td>
+                                        <td width=\"21\" style=\"font-size: 1px; line-height: 1px;\"><img src=\"images/spacer.gif\"  width=\"20\"></td>
+                                    </tr-->
+                                </table>  
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width=\"600\" align=\"left\" style=\"padding: font-size: 0; line-height: 0; height: 3px;\" height=\"3\" colspan=\"2\"><img src=\"";
+        // line 95
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("public/images/bg_bottom.png"), "html", null, true);
+        echo "\" ></td>
+                        </tr> 
+                    </table><!-- body -->
+                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"600\" style=\"font-family: Helvetica, Arial, sans-serif; line-height: 10px;\" class=\"footer\"> 
+                        <tr>
+                            <td align=\"center\" style=\"padding: 5px 0 10px; font-size: 11px; color:#7d7a7a; margin: 0; line-height: 1.2;font-family: Helvetica, Arial, sans-serif;\" valign=\"top\">
+                                <br><p style=\"font-size: 11px; color:#7d7a7a; margin: 0; padding: 0; font-family: Helvetica, Arial, sans-serif;\">You're receiving this newsletter because you bought widgets from us.</p>
+                                <p style=\"font-size: 11px; color:#7d7a7a; margin: 0; padding: 0; font-family: Helvetica, Arial, sans-serif;\">Having trouble reading this? <webversion style=\"color: #0eb6ce; text-decoration: none;\">View it in your browser</webversion>. Not interested? <unsubscribe style=\"color: #0eb6ce; text-decoration: none;\">Unsubscribe</unsubscribe> instantly.</p>
+                </td>
+            </tr>
+        </table><!-- footer-->
+    </td>
+</td>
+</tr>
+</table>
+</body>
+</html>";
+    }
+
+    public function getTemplateName()
+    {
+        return "ggPartyBundle:Party:mail_crud.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+}
