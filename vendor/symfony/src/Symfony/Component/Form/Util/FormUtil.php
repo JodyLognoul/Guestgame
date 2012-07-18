@@ -43,7 +43,6 @@ abstract class FormUtil
      * Returns whether the given choice is selected.
      *
      * @param mixed $choice The choice
-     * @param mixed $value  the value
      *
      * @return Boolean Whether the choice is selected
      */

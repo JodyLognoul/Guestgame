@@ -45,10 +45,6 @@ class CssSelector
     static public function toXPath($cssExpr, $prefix = 'descendant-or-self::')
     {
         if (is_string($cssExpr)) {
-            if (!$cssExpr) {
-                return $prefix.'*';
-            }
-
             if (preg_match('#^\w+\s*$#u', $cssExpr, $match)) {
                 return $prefix.trim($match[0]);
             }

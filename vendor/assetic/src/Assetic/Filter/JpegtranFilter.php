@@ -67,7 +67,11 @@ class JpegtranFilter implements FilterInterface
 
     public function filterDump(AssetInterface $asset)
     {
-        $pb = new ProcessBuilder(array($this->jpegtranBin));
+        $pb = new ProcessBuilder();
+        $pb
+            ->inheritEnvironmentVariables()
+            ->add($this->jpegtranBin)
+        ;
 
         if ($this->optimize) {
             $pb->add('-optimize');

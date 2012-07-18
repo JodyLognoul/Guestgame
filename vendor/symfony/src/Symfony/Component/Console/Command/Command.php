@@ -299,19 +299,6 @@ class Command
     }
 
     /**
-     * Gets the InputDefinition to be used to create XML and Text representations of this Command.
-     *
-     * Can be overridden to provide the original command representation when it would otherwise
-     * be changed by merging with the application InputDefinition.
-     *
-     * @return InputDefinition An InputDefinition instance
-     */
-    protected function getNativeDefinition()
-    {
-        return $this->getDefinition();
-    }
-
-    /**
      * Adds an argument.
      *
      * @param string  $name        The argument name
@@ -337,7 +324,7 @@ class Command
      * @param string  $shortcut    The shortcut (can be null)
      * @param integer $mode        The option mode: One of the InputOption::VALUE_* constants
      * @param string  $description A description text
-     * @param mixed   $default     The default value (must be null for InputOption::VALUE_REQUIRED or InputOption::VALUE_NONE)
+     * @param mixed   $default     The default value (must be null for InputOption::VALUE_REQUIRED or self::VALUE_NONE)
      *
      * @return Command The current instance
      *
@@ -544,7 +531,7 @@ class Command
             $messages[] = '<comment>Aliases:</comment> <info>'.implode(', ', $this->getAliases()).'</info>';
         }
 
-        $messages[] = $this->getNativeDefinition()->asText();
+        $messages[] = $this->definition->asText();
 
         if ($help = $this->getProcessedHelp()) {
             $messages[] = '<comment>Help:</comment>';
@@ -585,7 +572,7 @@ class Command
             $aliasXML->appendChild($dom->createTextNode($alias));
         }
 
-        $definition = $this->getNativeDefinition()->asXml(true);
+        $definition = $this->definition->asXml(true);
         $commandXML->appendChild($dom->importNode($definition->getElementsByTagName('arguments')->item(0), true));
         $commandXML->appendChild($dom->importNode($definition->getElementsByTagName('options')->item(0), true));
 

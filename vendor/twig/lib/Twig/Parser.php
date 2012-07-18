@@ -18,7 +18,6 @@
  */
 class Twig_Parser implements Twig_ParserInterface
 {
-    protected $stack = array();
     protected $stream;
     protected $parent;
     protected $handlers;
@@ -62,23 +61,14 @@ class Twig_Parser implements Twig_ParserInterface
      */
     public function parse(Twig_TokenStream $stream)
     {
-        // push all variables into the stack to keep the current state of the parser
-        $vars = get_object_vars($this);
-        unset($vars['stack'], $vars['env'], $vars['handlers'], $vars['visitors'], $vars['expressionParser']);
-        $this->stack[] = $vars;
-
         $this->tmpVarCount = 0;
 
         // tag handlers
-        if (null === $this->handlers) {
-            $this->handlers = $this->env->getTokenParsers();
-            $this->handlers->setParser($this);
-        }
+        $this->handlers = $this->env->getTokenParsers();
+        $this->handlers->setParser($this);
 
         // node visitors
-        if (null === $this->visitors) {
-            $this->visitors = $this->env->getNodeVisitors();
-        }
+        $this->visitors = $this->env->getNodeVisitors();
 
         if (null === $this->expressionParser) {
             $this->expressionParser = new Twig_ExpressionParser($this, $this->env->getUnaryOperators(), $this->env->getBinaryOperators());
@@ -112,14 +102,7 @@ class Twig_Parser implements Twig_ParserInterface
 
         $traverser = new Twig_NodeTraverser($this->env, $this->visitors);
 
-        $node = $traverser->traverse($node);
-
-        // restore previous stack so previous parse() call can resume working
-        foreach (array_pop($this->stack) as $key => $val) {
-            $this->$key = $val;
-        }
-
-        return $node;
+        return $traverser->traverse($node);
     }
 
     public function subparse($test, $dropNeedle = false)

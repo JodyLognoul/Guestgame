@@ -32,7 +32,7 @@ interface CacheInterface
      *
      * @param string $class Class Name
      *
-     * @return ClassMetadata|false A ClassMetadata instance or false on miss
+     * @return ClassMetadata
      */
     function read($class);
 

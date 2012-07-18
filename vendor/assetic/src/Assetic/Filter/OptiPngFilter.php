@@ -46,7 +46,11 @@ class OptiPngFilter implements FilterInterface
 
     public function filterDump(AssetInterface $asset)
     {
-        $pb = new ProcessBuilder(array($this->optipngBin));
+        $pb = new ProcessBuilder();
+        $pb
+            ->inheritEnvironmentVariables()
+            ->add($this->optipngBin)
+        ;
 
         if (null !== $this->level) {
             $pb->add('-o')->add($this->level);
@@ -63,7 +67,7 @@ class OptiPngFilter implements FilterInterface
 
         if (0 < $code) {
             unlink($input);
-            throw new \RuntimeException($proc->getErrorOutput());
+            throw new \RuntimeException($proc->getOutput());
         }
 
         $asset->setContent(file_get_contents($output));

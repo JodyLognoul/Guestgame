@@ -12,7 +12,6 @@
 namespace Symfony\Bundle\FrameworkBundle;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -133,11 +132,7 @@ class HttpKernel extends BaseHttpKernel
             }
         } else {
             $options['attributes']['_controller'] = $controller;
-
-            if (!isset($options['attributes']['_format'])) {
-                $options['attributes']['_format'] = $request->getRequestFormat();
-            }
-
+            $options['attributes']['_format'] = $request->getRequestFormat();
             $options['attributes']['_route'] = '_internal';
             $subRequest = $request->duplicate($options['query'], null, $options['attributes']);
         }

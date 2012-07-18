@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="../public/css/bootstrap.css" type="text/css" media="screen" />  
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBLzSSZR2DJrMxaIKURp44W1n1B3g7k_Yw&sensor=true">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        var myOptions = {
+          zoom: 8,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+      }
+      function codeAddress() {
+        var address = document.getElementById("address1").value;
+        geocoder.geocode( { 'address': address}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+          } else {
+            alert("Geocode was not successful for the following reason: " + status);
+          }
+        });
+      }
+
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:400px; height:400px;"></div>
+    <div>
+      <input type="text" class="input-xlarge" id="address1">
+      <input type="button" value="Refresh" class="btn btn-info" onclick="codeAddress()">
+    </div>
+      <!--form class="form-horizontal" style="">
+        <fieldset>
+          <legend>Saisir une adresse</legend>
+          <div class="control-group">
+            <label class="control-label" for="input01">Country</label>
+            <div class="controls">
+
+
+
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input02">City</label>
+            <div class="controls">
+              <input type="text" class="input-xlarge" id="input02">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input03">ZIP</label>
+            <div class="controls">
+              <input type="text" class="input-xlarge" id="input03">
+            </div>
+          </div>
+           <div class="control-group">
+            <label class="control-label" for="input04">Street</label>
+            <div class="controls">
+              <input type="text" class="input-xlarge" id="input04">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input05">Number</label>
+            <div class="controls">
+              <input type="text" id="input05">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input06"></label>
+            <div class="controls">
+              
+            </div>
+          </div>
+        </fieldset>
+      </form-->
+  </body>
+</html>

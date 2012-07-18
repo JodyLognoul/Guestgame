@@ -12,7 +12,7 @@
 namespace Sensio\Bundle\GeneratorBundle\Tests\Generator;
 
 use Sensio\Bundle\GeneratorBundle\Generator\BundleGenerator;
-use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpKernel\Util\Filesystem;
 
 class BundleGeneratorTest extends GeneratorTest
 {

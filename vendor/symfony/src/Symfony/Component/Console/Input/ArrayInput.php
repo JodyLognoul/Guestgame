@@ -116,7 +116,7 @@ class ArrayInput extends Input
     protected function parse()
     {
         foreach ($this->parameters as $key => $value) {
-            if (0 === strpos($key, '--')) {
+            if ('--' === substr($key, 0, 2)) {
                 $this->addLongOption(substr($key, 2), $value);
             } elseif ('-' === $key[0]) {
                 $this->addShortOption(substr($key, 1), $value);

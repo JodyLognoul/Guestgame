@@ -80,7 +80,7 @@ class Link
         $uri = trim($this->getRawUri());
 
         // absolute URL?
-        if (0 === strpos($uri, 'http')) {
+        if ('http' === substr($uri, 0, 4)) {
             return $uri;
         }
 

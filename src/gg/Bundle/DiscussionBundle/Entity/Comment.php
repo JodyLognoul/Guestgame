@@ -176,4 +176,24 @@ class Comment
     {
         return $this->datecrea;
     }
+
+    /**
+     * Set discussion
+     *
+     * @param gg\Bundle\DiscussionBundle\Entity\Discussion $discussion
+     */
+    public function setDiscussion(\gg\Bundle\DiscussionBundle\Entity\Discussion $discussion)
+    {
+        $this->discussion = $discussion;
+    }
+
+    /**
+     * Get discussion
+     *
+     * @return gg\Bundle\DiscussionBundle\Entity\Discussion 
+     */
+    public function getDiscussion()
+    {
+        return $this->discussion;
+    }
 }

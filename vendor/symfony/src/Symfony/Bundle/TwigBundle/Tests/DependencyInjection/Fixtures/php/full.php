@@ -9,7 +9,6 @@ $container->loadFromExtension('twig', array(
      'globals' => array(
          'foo' => '@bar',
          'pi'  => 3.14,
-         'bad' => array('key' => 'foo'),
      ),
      'auto_reload'         => true,
      'autoescape'          => true,

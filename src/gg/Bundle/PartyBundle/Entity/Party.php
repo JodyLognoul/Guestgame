@@ -70,7 +70,7 @@ class Party {
     /**
      * @var string $urlid
      *
-     * @ORM\Column(name="urlid", type="string", length=32)
+     * @ORM\Column(name="urlid", type="string", length=32,nullable=true)
      */
     private $urlid;
 

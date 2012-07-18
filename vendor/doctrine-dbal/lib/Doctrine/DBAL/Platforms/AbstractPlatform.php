@@ -987,7 +987,7 @@ abstract class AbstractPlatform
         $sql = $this->_getCreateTableSQL($tableName, $columns, $options);
         if ($this->supportsCommentOnStatement()) {
             foreach ($table->getColumns() AS $column) {
-                if ($this->getColumnComment($column)) {
+                if ($column->getComment()) {
                     $sql[] = $this->getCommentOnColumnSQL($tableName, $column->getName(), $this->getColumnComment($column));
                 }
             }

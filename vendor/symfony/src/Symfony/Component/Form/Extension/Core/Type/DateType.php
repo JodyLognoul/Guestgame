@@ -57,7 +57,7 @@ class DateType extends AbstractType
             \Locale::getDefault(),
             $format,
             \IntlDateFormatter::NONE,
-            'UTC',
+            \DateTimeZone::UTC,
             \IntlDateFormatter::GREGORIAN,
             $pattern
         );

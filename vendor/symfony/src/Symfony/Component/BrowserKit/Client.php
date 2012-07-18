@@ -197,8 +197,6 @@ abstract class Client
      *
      * @param Link $link A Link instance
      *
-     * @return Crawler
-     *
      * @api
      */
     public function click(Link $link)
@@ -443,7 +441,7 @@ abstract class Client
     protected function getAbsoluteUri($uri)
     {
         // already absolute?
-        if (0 === strpos($uri, 'http')) {
+        if ('http' === substr($uri, 0, 4)) {
             return $uri;
         }
 
@@ -484,6 +482,6 @@ abstract class Client
      */
     protected function requestFromRequest(Request $request, $changeHistory = true)
     {
-        return $this->request($request->getMethod(), $request->getUri(), $request->getParameters(), $request->getFiles(), $request->getServer(), $request->getContent(), $changeHistory);
+        return $this->request($request->getMethod(), $request->getUri(), $request->getParameters(), array(), $request->getFiles(), $request->getServer(), $request->getContent(), $changeHistory);
     }
 }

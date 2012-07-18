@@ -56,8 +56,8 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Compiles a node.
      *
-     * @param Twig_NodeInterface $node        The node to compile
-     * @param integer            $indentation The current indentation
+     * @param Twig_NodeInterface $node   The node to compile
+     * @param integer            $indent The current indentation
      *
      * @return Twig_Compiler The current compiler instance
      */
@@ -123,7 +123,7 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Adds a quoted string to the compiled code.
      *
-     * @param  string $value The string
+     * @param  string $string The string
      *
      * @return Twig_Compiler The current compiler instance
      */
@@ -145,11 +145,11 @@ class Twig_Compiler implements Twig_CompilerInterface
     {
         if (is_int($value) || is_float($value)) {
             $this->raw($value);
-        } elseif (null === $value) {
+        } else if (null === $value) {
             $this->raw('null');
-        } elseif (is_bool($value)) {
+        } else if (is_bool($value)) {
             $this->raw($value ? 'true' : 'false');
-        } elseif (is_array($value)) {
+        } else if (is_array($value)) {
             $this->raw('array(');
             $i = 0;
             foreach ($value as $key => $value) {
@@ -188,7 +188,7 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Indents the generated code.
      *
-     * @param integer $step The number of indentation to add
+     * @param integer $indent The number of indentation to add
      *
      * @return Twig_Compiler The current compiler instance
      */
@@ -202,7 +202,7 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Outdents the generated code.
      *
-     * @param integer $step The number of indentation to remove
+     * @param integer $indent The number of indentation to remove
      *
      * @return Twig_Compiler The current compiler instance
      */

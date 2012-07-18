@@ -134,7 +134,7 @@ class Response
         $charset = $this->charset ?: 'UTF-8';
         if (!$this->headers->has('Content-Type')) {
             $this->headers->set('Content-Type', 'text/html; charset='.$charset);
-        } elseif (0 === strpos($this->headers->get('Content-Type'), 'text/') && false === strpos($this->headers->get('Content-Type'), 'charset')) {
+        } elseif ('text/' === substr($this->headers->get('Content-Type'), 0, 5) && false === strpos($this->headers->get('Content-Type'), 'charset')) {
             // add the charset
             $this->headers->set('Content-Type', $this->headers->get('Content-Type').'; charset='.$charset);
         }
@@ -672,7 +672,7 @@ class Response
     public function setCache(array $options)
     {
         if ($diff = array_diff(array_keys($options), array('etag', 'last_modified', 'max_age', 's_maxage', 'private', 'public'))) {
-            throw new \InvalidArgumentException(sprintf('Response does not support the following options: "%s".', implode('", "', array_values($diff))));
+            throw new \InvalidArgumentException(sprintf('Response does not support the following options: "%s".', implode('", "', array_keys($diff))));
         }
 
         if (isset($options['etag'])) {
@@ -732,7 +732,7 @@ class Response
     /**
      * Returns true if the response includes a Vary header.
      *
-     * @return Boolean true if the response includes a Vary header, false otherwise
+     * @return true if the response includes a Vary header, false otherwise
      *
      * @api
      */
@@ -802,8 +802,6 @@ class Response
 
     // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isInvalid()
@@ -812,8 +810,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isInformational()
@@ -822,8 +818,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isSuccessful()
@@ -832,8 +826,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isRedirection()
@@ -842,8 +834,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isClientError()
@@ -852,8 +842,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isServerError()
@@ -862,8 +850,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isOk()
@@ -872,8 +858,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isForbidden()
@@ -882,8 +866,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isNotFound()
@@ -892,10 +874,6 @@ class Response
     }
 
     /**
-     * @param string $location
-     *
-     * @return Boolean
-     *
      * @api
      */
     public function isRedirect($location = null)
@@ -904,8 +882,6 @@ class Response
     }
 
     /**
-     * @return Boolean
-     *
      * @api
      */
     public function isEmpty()

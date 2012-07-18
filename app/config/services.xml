@@ -1,0 +1,15 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+       <service id="sonata.admin.course" class="gg\Bundle\PartyBundle\Admin\PartyAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Posts" label="Party"/>
+          <argument />
+          <argument>gg\Bundle\PartyBundle\Entity\Party</argument>
+          <argument>SonataAdminBundle:CRUD</argument>
+          <call method="setTranslationDomain">
+              <argument>ggPartyBundle</argument>
+          </call>
+      </service>
+   </services>
+</container>

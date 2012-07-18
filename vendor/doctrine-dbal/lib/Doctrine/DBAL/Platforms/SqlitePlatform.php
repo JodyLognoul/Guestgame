@@ -470,7 +470,6 @@ class SqlitePlatform extends AbstractPlatform
             'longtext'         => 'text',
             'text'             => 'text',
             'varchar'          => 'string',
-            'longvarchar'      => 'string',
             'varchar2'         => 'string',
             'nvarchar'         => 'string',
             'image'            => 'string',

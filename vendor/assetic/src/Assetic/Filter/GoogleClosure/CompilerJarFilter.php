@@ -34,11 +34,13 @@ class CompilerJarFilter extends BaseCompilerFilter
     {
         $cleanup = array();
 
-        $pb = new ProcessBuilder(array(
-            $this->javaPath,
-            '-jar',
-            $this->jarPath,
-        ));
+        $pb = new ProcessBuilder();
+        $pb
+            ->inheritEnvironmentVariables()
+            ->add($this->javaPath)
+            ->add('-jar')
+            ->add($this->jarPath)
+        ;
 
         if (null !== $this->compilationLevel) {
             $pb->add('--compilation_level')->add($this->compilationLevel);

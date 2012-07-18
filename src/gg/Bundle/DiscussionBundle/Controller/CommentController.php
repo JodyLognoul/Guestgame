@@ -87,10 +87,15 @@ class CommentController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
+
+            $iddiscution = $request->request->get('iddiscution');
+            $discussion = $em->getRepository('ggDiscussionBundle:Discussion')->find($iddiscution);
+            
+            $entity->setDiscussion($discussion);
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('discussion_show', array('id' => $request->request->get('iddiscution'))));
+            return $this->redirect($this->generateUrl('discussion_show', array('id' => $iddiscution)));
             
         }
 

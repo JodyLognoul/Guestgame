@@ -300,7 +300,7 @@ class FormBuilder
     /**
      * Appends a transformer to the normalization transformer chain
      *
-     * @param DataTransformerInterface $normTransformer
+     * @param DataTransformerInterface $clientTransformer
      *
      * @return FormBuilder The current builder
      */

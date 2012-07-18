@@ -653,7 +653,7 @@ class Application
             }
         }
 
-        return implode(PHP_EOL, $messages);
+        return implode("\n", $messages);
     }
 
     /**
@@ -781,8 +781,7 @@ class Application
 
         if (null !== $this->runningCommand) {
             $output->writeln(sprintf('<info>%s</info>', sprintf($this->runningCommand->getSynopsis(), $this->getName())));
-            $output->writeln("");
-            $output->writeln("");
+            $output->writeln("\n");
         }
     }
 

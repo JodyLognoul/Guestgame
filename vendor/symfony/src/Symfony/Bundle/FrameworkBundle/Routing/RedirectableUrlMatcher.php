@@ -11,12 +11,13 @@
 
 namespace Symfony\Bundle\FrameworkBundle\Routing;
 
-use Symfony\Component\Routing\Matcher\RedirectableUrlMatcher as BaseMatcher;
+use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\Matcher\RedirectableUrlMatcherInterface;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class RedirectableUrlMatcher extends BaseMatcher
+class RedirectableUrlMatcher extends UrlMatcher implements RedirectableUrlMatcherInterface
 {
     /**
      * Redirects the user to another URL.

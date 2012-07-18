@@ -19,7 +19,14 @@ class AppKernel extends Kernel
             new gg\Bundle\SiteBundle\ggSiteBundle(),            
             new gg\Bundle\PartyBundle\ggPartyBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new gg\Bundle\DiscussionBundle\ggDiscussionBundle(),           
+            new gg\Bundle\DiscussionBundle\ggDiscussionBundle(),   
+            new Sonata\CacheBundle\SonataCacheBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),  
+            new Sonata\jQueryBundle\SonatajQueryBundle(),  
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {            

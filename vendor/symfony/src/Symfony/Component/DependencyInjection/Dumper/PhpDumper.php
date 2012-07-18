@@ -648,8 +648,6 @@ EOF;
      */
     private function addConstructor()
     {
-        $arguments = $this->container->getParameterBag()->all() ? 'new ParameterBag($this->getDefaultParameters())' : null;
-
         $code = <<<EOF
 
     /**
@@ -657,7 +655,7 @@ EOF;
      */
     public function __construct()
     {
-        parent::__construct($arguments);
+        parent::__construct(new ParameterBag(\$this->getDefaultParameters()));
 
 EOF;
 

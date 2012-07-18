@@ -49,7 +49,7 @@ class DiscussionController extends Controller
         $formcomment   = $this->createForm(new CommentType(), $entitycomment);
 
         //comment list
-        $comments = $em->getRepository('ggDiscussionBundle:Comment')->findAll();
+        $comments = $em->getRepository('ggDiscussionBundle:Comment')->findBy(array('discussion' => $id));
 
         //discution show        
         $discution = $em->getRepository('ggDiscussionBundle:Discussion')->find($id);
