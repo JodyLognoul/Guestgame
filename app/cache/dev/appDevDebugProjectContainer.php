@@ -2543,7 +2543,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSonata_Cache_EsiService()
     {
-        return $this->services['sonata.cache.esi'] = new \Sonata\CacheBundle\Adapter\EsiCache('0207c2ccfc6152c285bb2651288f987616b48e29c14025887dd941b41f17b66b', array(0 => 'varnishadm -T 127.0.0.1:2000 {{ COMMAND }} "{{ EXPRESSION }}"'), $this->get('router'), $this->get('controller_resolver'));
+        return $this->services['sonata.cache.esi'] = new \Sonata\CacheBundle\Adapter\EsiCache('536fe67814a9bfe0659d3853ad66bbcd987d80cece3df68f6736e7ae7073af9d', array(0 => 'varnishadm -T 127.0.0.1:2000 {{ COMMAND }} "{{ EXPRESSION }}"'), $this->get('router'), $this->get('controller_resolver'));
     }
 
     /**

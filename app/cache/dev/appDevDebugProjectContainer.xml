@@ -3005,7 +3005,7 @@
     </service>
     <service id="sonata.cache.esi" class="Sonata\CacheBundle\Adapter\EsiCache">
       <tag name="sonata.cache"/>
-      <argument>0207c2ccfc6152c285bb2651288f987616b48e29c14025887dd941b41f17b66b</argument>
+      <argument>536fe67814a9bfe0659d3853ad66bbcd987d80cece3df68f6736e7ae7073af9d</argument>
       <argument type="collection">
         <argument>varnishadm -T 127.0.0.1:2000 {{ COMMAND }} "{{ EXPRESSION }}"</argument>
       </argument>
